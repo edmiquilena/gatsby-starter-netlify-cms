@@ -29,7 +29,8 @@
     "react-dom": "^16.8.4",
     "react-helmet": "^6.0.0",
     "sass": "^1.43.2",
-    "uuid": "^7.0.0"
+    "uuid": "^7.0.0",
+        "cross-env": "^7.0.2"
   },
   "keywords": [
     "gatsby"
@@ -39,7 +40,7 @@
   "scripts": {
     "clean": "gatsby clean",
     "start": "npm run develop",
-    "build": "npm run clean && gatsby build",
+    "build": "cross-env GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "develop": "npm run clean && gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
